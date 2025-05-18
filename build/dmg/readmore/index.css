@@ -1,0 +1,15 @@
+/*!*****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/dmg/readmore/editor.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************/
+.dmg-post-selector {
+  width: 100%;
+}
+
+.dmg-post-selector-modal__current {
+  margin-bottom: 15px;
+}
+.dmg-post-selector-modal__content {
+  min-width: 70%;
+}
+
+/*# sourceMappingURL=index.css.map*/
