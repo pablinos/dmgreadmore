@@ -37,9 +37,12 @@ export default function Edit( { attributes, setAttributes } ) {
 		[ postId ]
 	);
 
-	const handleSelectPost = useCallback( ( post ) => {
-		setAttributes( { postId: post.id } );
-	}, [setAttributes]);
+	const handleSelectPost = useCallback(
+		( post ) => {
+			setAttributes( { postId: post.id } );
+		},
+		[ setAttributes ]
+	);
 
 	if (
 		postId &&

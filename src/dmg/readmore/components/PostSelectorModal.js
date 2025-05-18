@@ -22,13 +22,16 @@ const PostSelectorModal = ( { selectedPostId, onSelectPost } ) => {
 		[ selectedPostId ]
 	);
 
-	const openModal = useCallback( () => setIsOpen( true ), [ setIsOpen ] );;
+	const openModal = useCallback( () => setIsOpen( true ), [ setIsOpen ] );
 	const closeModal = useCallback( () => setIsOpen( false ), [ setIsOpen ] );
 
-	const handleSelectPost = useCallback( ( postId ) => {
-		onSelectPost( postId );
-		closeModal();
-	}, [ onSelectPost, closeModal ] );
+	const handleSelectPost = useCallback(
+		( postId ) => {
+			onSelectPost( postId );
+			closeModal();
+		},
+		[ onSelectPost, closeModal ]
+	);
 
 	return (
 		<div className="dmg-post-selector-modal">
