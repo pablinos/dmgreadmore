@@ -13,7 +13,8 @@ Block that creates a 'Read More' link to another post.
 	- In future this could be extended to store the ID of the post being linked to in the meta, which would mean youcould search for all links to a particular post. This could be important because the post title or link might change, and with the current implementation that would mean the old details will be saved in the linking post.
 
 ## To Do
-- Add tests
+- Add (more) tests
+  - There are some initial tests for the PostSelector components, which can be run with `npm test` 
 - Create an improved icon
 - Improve the data view paging to prevent the current flicker
 
