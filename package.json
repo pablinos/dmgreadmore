@@ -12,10 +12,14 @@
 		"lint:js": "wp-scripts lint-js",
 		"packages-update": "wp-scripts packages-update",
 		"plugin-zip": "wp-scripts plugin-zip",
-		"start": "wp-scripts start"
+		"start": "wp-scripts start",
+		"test": "wp-scripts test-unit-js"
 	},
 	"devDependencies": {
+		"@testing-library/jest-dom": "^6.6.3",
+		"@testing-library/react": "^16.3.0",
 		"@wordpress/env": "^10.23.0",
+		"@wordpress/jest-preset-default": "^12.23.0",
 		"@wordpress/scripts": "^30.16.0"
 	},
 	"dependencies": {
