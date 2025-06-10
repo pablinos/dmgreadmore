@@ -8,6 +8,7 @@ import PostSelector from './components/PostSelector';
 import PostSelectorModal from './components/PostSelectorModal';
 import './editor.scss';
 
+const EMPTY_OBJECT = {};
 /**
  * The edit component for the block will render a Placeholder initially and then
  * once a post is selected, will render the representation of the Read More link.
@@ -22,7 +23,7 @@ export default function Edit( { attributes, setAttributes } ) {
 	const { postTitle, postLink } = useSelect(
 		( select ) => {
 			if ( ! postId ) {
-				return {};
+				return EMPTY_OBJECT;
 			}
 			const post = select( store ).getEntityRecord(
 				'postType',
@@ -45,7 +46,7 @@ export default function Edit( { attributes, setAttributes } ) {
 	);
 
 	if (
-		postId &&
+		postId && postTitle && postLink &&
 		( postTitle !== attributes.postTitle ||
 			postLink !== attributes.postLink )
 	) {

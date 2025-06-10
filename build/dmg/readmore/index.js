@@ -12410,7 +12410,6 @@ const PostSelectorModal = ({
     return select(_wordpress_core_data__WEBPACK_IMPORTED_MODULE_4__.store).getEntityRecord('postType', 'post', selectedPostId);
   }, [selectedPostId]);
   const openModal = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useCallback)(() => setIsOpen(true), [setIsOpen]);
-  ;
   const closeModal = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useCallback)(() => setIsOpen(false), [setIsOpen]);
   const handleSelectPost = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useCallback)(postId => {
     onSelectPost(postId);
@@ -12484,6 +12483,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const EMPTY_OBJECT = {};
 /**
  * The edit component for the block will render a Placeholder initially and then
  * once a post is selected, will render the representation of the Read More link.
@@ -12493,7 +12493,6 @@ __webpack_require__.r(__webpack_exports__);
  * @param {Function} props.setAttributes Function to set block attributes.
  * @return {Element} Element to render.
  */
-
 function Edit({
   attributes,
   setAttributes
@@ -12506,7 +12505,7 @@ function Edit({
     postLink
   } = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_5__.useSelect)(select => {
     if (!postId) {
-      return {};
+      return EMPTY_OBJECT;
     }
     const post = select(_wordpress_core_data__WEBPACK_IMPORTED_MODULE_4__.store).getEntityRecord('postType', 'post', postId);
     return {
@@ -12519,7 +12518,7 @@ function Edit({
       postId: post.id
     });
   }, [setAttributes]);
-  if (postId && (postTitle !== attributes.postTitle || postLink !== attributes.postLink)) {
+  if (postId && postTitle && postLink && (postTitle !== attributes.postTitle || postLink !== attributes.postLink)) {
     setAttributes({
       postTitle,
       postLink
