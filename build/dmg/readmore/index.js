@@ -12518,12 +12518,14 @@ function Edit({
       postId: post.id
     });
   }, [setAttributes]);
-  if (postId && postTitle && postLink && (postTitle !== attributes.postTitle || postLink !== attributes.postLink)) {
-    setAttributes({
-      postTitle,
-      postLink
-    });
-  }
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useEffect)(() => {
+    if (postId && postTitle && postLink && (postTitle !== attributes.postTitle || postLink !== attributes.postLink)) {
+      setAttributes({
+        postTitle,
+        postLink
+      });
+    }
+  }, [postId, postTitle, postLink, attributes.postTitle, attributes.postLink]);
   const inspectorControls = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.InspectorControls, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Post Selection', 'dmgreadmore'),

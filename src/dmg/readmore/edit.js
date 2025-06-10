@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useCallback } from '@wordpress/element';
+import { useCallback, useEffect } from '@wordpress/element';
 import { PanelBody, Placeholder } from '@wordpress/components';
 import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
 import { store } from '@wordpress/core-data';
@@ -45,16 +45,18 @@ export default function Edit( { attributes, setAttributes } ) {
 		[ setAttributes ]
 	);
 
-	if (
-		postId && postTitle && postLink &&
-		( postTitle !== attributes.postTitle ||
-			postLink !== attributes.postLink )
-	) {
-		setAttributes( {
-			postTitle,
-			postLink,
-		} );
-	}
+	useEffect( () => {
+		if (
+			postId && postTitle && postLink &&
+			( postTitle !== attributes.postTitle ||
+				postLink !== attributes.postLink )
+		) {
+			setAttributes( {
+				postTitle,
+				postLink,
+			} );
+		}
+	}, [ postId, postTitle, postLink, attributes.postTitle, attributes.postLink ] );
 
 	const inspectorControls = (
 		<InspectorControls>
